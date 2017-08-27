@@ -1,0 +1,5 @@
+(false? (#(= (vec %) (reverse %)) '(1 2 3 4 5)))
+(true? (#(= (vec %) (reverse %)) "racecar"))
+(true? (#(= (vec %) (reverse %)) [:foo :bar :foo]))
+(true? (#(= (vec %) (reverse %)) '(1 1 3 3 1 1)))
+(false? (#(= (vec %) (reverse %)) '(:a :b :c)))
