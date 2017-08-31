@@ -13,16 +13,19 @@
 (= (__ 5 8) '(5 6 7))
 
 
+; Old version
 (defn __2
-  [x n]
+  [x y]
   (
+   ;; Start code
    (fn [s e]
      ((fn my-range
-        [s x e] 
+        [s x e]
         (if (< s e)
           (my-range (inc s) (conj x s) e)
           x))
       s [] e))
-   x n))
+   ;; End code
+   x y))
 (__ 1 4)
 

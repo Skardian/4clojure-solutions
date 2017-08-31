@@ -1,5 +1,14 @@
-(#(partition-by identity %) [1 1 2 1 1 1 3 3])
+(defn __
+  [x]
+  (
+   ;; Begin code
+   (fn [x]
+     (partition-by identity x))
+   ;; End code
+   x))
+(__ [1 1 2 1 1 1 3 3])
 
-(= (#(partition-by identity %) [1 1 2 1 1 1 3 3]) '((1 1) (2) (1 1 1) (3 3)))
-(= (#(partition-by identity %) [:a :a :b :b :c]) '((:a :a) (:b :b) (:c)))
-(= (#(partition-by identity %) [[1 2] [1 2] [3 4]]) '(([1 2] [1 2]) ([3 4])))
+
+(= (__ [1 1 2 1 1 1 3 3]) '((1 1) (2) (1 1 1) (3 3)))
+(= (__ [:a :a :b :b :c]) '((:a :a) (:b :b) (:c)))
+(= (__ [[1 2] [1 2] [3 4]]) '(([1 2] [1 2]) ([3 4])))

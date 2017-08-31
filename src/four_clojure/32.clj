@@ -1,4 +1,15 @@
-(= ((fn [x] (reduce (fn [acc x] (conj acc x x)) [] x)) [1 2 3]) '(1 1 2 2 3 3))
-(= ((fn [x] (reduce (fn [acc x] (conj acc x x)) [] x)) [:a :a :b :b]) '(:a :a :a :a :b :b :b :b))
-(= ((fn [x] (reduce (fn [acc x] (conj acc x x)) [] x)) [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4]))
-(= ((fn [x] (reduce (fn [acc x] (conj acc x x)) [] x)) [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4]))
+(defn __
+  [x]
+  (
+   ;; Begin code
+   (fn [x]
+     (mapcat #(repeat 2 %) x))
+   ;; End code
+   x))
+(__ [1 2 3])
+
+
+(= (__ [1 2 3]) '(1 1 2 2 3 3))
+(= (__ [:a :a :b :b]) '(:a :a :a :a :b :b :b :b))
+(= (__ [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4]))
+(= (__ [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4]))

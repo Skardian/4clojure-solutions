@@ -1,6 +1,6 @@
 (defn __
   [& x]
-  (apply 
+  (apply
    ;; Begin code
    (fn [& x]
      (reduce #(if (> % %2) % %2) x))
