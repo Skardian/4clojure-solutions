@@ -1,4 +1,12 @@
-(= ((fn [x] (str "Hello, " x "!")) "Dave") "Hello, Dave!")
-(= ((fn [x] (str "Hello, " x "!")) "Jenn") "Hello, Jenn!")
-(= ((fn [x] (str "Hello, " x "!")) "Rhea") "Hello, Rhea!")
+(defn __
+  [x]
+  (
+   ;; Begin code
+   (fn [x]
+     (str "Hello, " x "!"))
+   ;; End code
+   x))
+(= (__ "Dave") "Hello, Dave!")
+(= (__ "Jenn") "Hello, Jenn!")
+(= (__ "Rhea") "Hello, Rhea!")
 
