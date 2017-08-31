@@ -1,3 +1,13 @@
-(= (#(apply str (re-seq #"[A-Z]" %)) "HeLlO, WoRlD!") "HLOWRD")
-(empty? (#(apply str (re-seq #"[A-Z]" %)) "nothing"))
-(= (#(apply str (re-seq #"[A-Z]" %)) "$#A(*&987Zf") "AZ")
+(defn __
+  [x]
+  (
+   ;; Begin code
+   (fn [x]
+     (apply str (re-seq #"[A-Z]" x)))
+   ;; End code
+   x))
+(__ "HeLlO, WoRlD!")
+
+(= (__ "HeLlO, WoRlD!") "HLOWRD")
+(empty? (__ "nothing"))
+(= (__ "$#A(*&987Zf") "AZ")
